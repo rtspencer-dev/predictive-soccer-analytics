@@ -24,14 +24,32 @@ The goal is to explore how underlying chance quality and defensive strength tran
 
 ## 📊 Data
 
-The model uses historical match-level statistics, including:
+This project uses **public, historical match-level expected goals (xG) data** from Europe’s top five leagues
+(Premier League, La Liga, Bundesliga, Serie A, and Ligue 1).
 
-- **xG (Expected Goals)**
-- **xGA (Expected Goals Against)**
-- Match outcome labels
+Each raw match record includes:
 
-> Data sources may include public soccer analytics providers or custom-processed datasets.  
-> *(Exact source configurable by the user.)*
+- **Home team xG**
+- **Away team xG**
+- Final score (used for label generation)
+- Match metadata (date, venue, referee, attendance)
+
+### Feature Engineering
+
+Some stats used by the model are **created from the raw data**, including:
+
+- **xGA (Expected Goals Against)** — computed as opponent xG  
+- Rolling team form metrics (e.g. last *N* matches xG / xGA)
+- Home vs. away performance splits
+- Match outcome labels (win / draw / loss)
+
+### Notes
+
+- No private or paid APIs are required  
+- All features are generated from raw xG match data  
+- The preprocessing pipeline is fully reproducible
+  
+> Raw data comes from [OpenDataBay: Big Five Football xG Data](https://www.opendatabay.com/data/dataset/bbb1a478-5f55-4c6e-84f0-63596624f1f6). The preprocessing scripts in `src/data/` assume the CSVs are downloaded locally.
 
 ---
 
