@@ -93,6 +93,6 @@ This project is licensed under the MIT License.
 
 ## 📬 Contact
 
-Created by Ryan Spencer
+Created by Ryan Spencer.
 If you’re interested in soccer analytics, machine learning, or collaboration, feel free to reach out!
 
