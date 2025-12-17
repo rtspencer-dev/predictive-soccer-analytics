@@ -1,6 +1,6 @@
 # ⚽ Predictive Soccer Analytics
 
-A Python machine learning project that predicts soccer match outcomes using advanced performance metrics such as **Expected Goals (xG)**, **Expected Assists (xA)**, and **Expected Goals Against (xGA)**.
+A Python machine learning project that predicts soccer match outcomes using advanced performance metrics such as **Expected Goals (xG)** and **Expected Goals Against (xGA)**.
 
 ---
 
@@ -15,7 +15,7 @@ The goal is to explore how underlying chance quality and defensive strength tran
 ## 🔍 Features
 
 - Match outcome prediction (Win / Draw / Loss)
-- Feature engineering using xG, xA, and xGA
+- Feature engineering using xG and xGA
 - Train/test evaluation with multiple ML models
 - Reproducible data preprocessing pipeline
 - Extensible framework for additional metrics (shots, possession, Elo, etc.)
@@ -27,7 +27,6 @@ The goal is to explore how underlying chance quality and defensive strength tran
 The model uses historical match-level statistics, including:
 
 - **xG (Expected Goals)**
-- **xA (Expected Assists)**
 - **xGA (Expected Goals Against)**
 - Match outcome labels
 
@@ -42,6 +41,7 @@ Initial models explored:
 
 - Logistic Regression (baseline)
 - Random Forest
+- XGBoost
 
 Model performance is evaluated using:
 - Accuracy
