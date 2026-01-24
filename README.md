@@ -56,7 +56,6 @@ Some stats used by the model are **created from the raw data**, including:
 ## 🧠 Models
 
 Initial models explored:
-
 - Logistic Regression (baseline)
 - Random Forest
 - XGBoost
@@ -64,14 +63,30 @@ Initial models explored:
 Model performance is evaluated using:
 - Accuracy
 - Precision / Recall
-- Confusion Matrix
-- Cross-validation
+- F1 Score
 
 ---
 
 ## 📈 Results
 
-Will be posted after more testing and implementation.
+### Model Comparison and Discussion
+
+Across all three models, predicting match outcomes proved challenging, particularly for draw results. This is consistent with prior research in soccer analytics, as draws are inherently less frequent and harder to distinguish from narrow home or away wins.
+
+Overall comparison:
+
+- Logistic Regression achieved the best overall performance with the highest accuracy (55.6%) and weighted F1-score (0.57).
+- Random Forest performed slightly worse, with similar class-wise behavior but marginally lower accuracy (53.6%).
+- XGBoost underperformed relative to the other models, yielding the lowest accuracy (47.3%) and F1-scores across all classes.
+
+Despite its simplicity, Logistic Regression outperformed the more complex tree-based models. This suggests that the engineered features exhibit largely linear relationships with match outcomes, and that increased model complexity did not translate into better generalization on unseen matches.
+
+### Key Takeaways
+
+- Simpler models can outperform more complex ones when feature relationships are mostly linear and the dataset size is limited.
+- Class imbalance and outcome ambiguity significantly impact predictive performance, especially for draws.
+- Improving draw prediction may require richer features such as in-game statistics, expected goals (xG), or temporal team form metrics.
+- Overall accuracy above 55% for a three-class soccer outcome prediction task represents a meaningful improvement over random guessing (33%).
 
 ---
 
@@ -79,7 +94,6 @@ Will be posted after more testing and implementation.
 
 - Add player-level features
 - Incorporate betting odds or Elo ratings
-- Multi-class vs regression (goal difference)
 - Time-series modeling for form and momentum
 - Web app or API deployment
 
